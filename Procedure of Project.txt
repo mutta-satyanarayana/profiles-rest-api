@@ -1,0 +1,38 @@
+1)install required Softwares
+git, vagrant,python 3 software, virtual box,atom editor
+
+optional:-
+git --version
+git config --global user.email "satyanarayana0099@gmail.com"
+git config --global user.name "narayana"
+
+2) create files for project
+LICENCE,  .gitignore,  README.md
+
+
+3) initialization of git
+init git
+git add .
+git commit -am "initial commit"
+
+4) create github key for connection b/w local(working) PC to Github Servers
+#          -t rsa ->(type of key)
+ssh-genkey -t rsa  -b 4096 -C "narayana@indiaappdeveloper.com"
+# .ssh folder available in "C:\Users\HP\.ssh"
+
+5)open github profile "settings/'SSH and GPG keys'"  add new key 
+# add name to key "narayana-laptop"
+# copy key from "id_rsa.pub" & paste in "SSH and GPG keys"
+
+6) Create New Repository "profiles-rest-api"
+git remote add origin https://github.com/mutta-satyanarayana/profiles-rest-api.git
+git branch -M main
+git push -u origin main
+
+
+7) Vagrant initialization 
+vagrant init ubuntu/bionic64
+# edit data in "Vagrantfile"
+# copy vagrant code from "https://gist.github.com/LondonAppDev/199eef145a21587ea866b69d40d28682" to "Vagrantfile" file & save changes
+vagrant up
+vagrant ssh
